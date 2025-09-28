@@ -6,6 +6,9 @@ BOT_TOKEN = os.getenv("BOT_TOKEN")
 REPORT_CHAT_ID = int(os.getenv("REPORT_CHAT_ID"))
 TECH_CHAT_ID = int(os.getenv("TECH_CHAT_ID", REPORT_CHAT_ID))
 
+# Список ID админов (через запятую)
+ADMIN_IDS = [int(x.strip()) for x in os.getenv("ADMIN_IDS", "").split(",") if x.strip()]
+
 API_BASE_URL = os.getenv("API_BASE_URL", "").rstrip("/")
 API_REPORT_DAILY = os.getenv("API_REPORT_DAILY", "/api/reports/daily/")
 API_REPORT_RANGE = os.getenv("API_REPORT_RANGE", "/api/reports/range/")

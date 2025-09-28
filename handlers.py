@@ -3,6 +3,7 @@ from aiogram.filters import Command
 from datetime import datetime
 from texts import format_daily, UZ_LOADING, UZ_OK, UZ_ERR
 from api import get_daily_report, health
+from config import ADMIN_IDS
 
 router = Router()
 
@@ -18,11 +19,19 @@ async def start(m: types.Message):
 
 @router.message(Command("ping"))
 async def ping(m: types.Message):
+    # Только для админов
+    if m.from_user.id not in ADMIN_IDS:
+        await m.answer("❌ Bu buyruq faqat adminlar uchun")
+        return
     data = await health()
-    await m.answer(f"ping: {data.get('status','?')} {data.get('tz','')}", disable_web_page_preview=True)
+    await m.answer(f"pong: {data.get('status','?')} {data.get('tz','')}", disable_web_page_preview=True)
 
 @router.message(Command("report"))
 async def manual_report(m: types.Message):
+    # Только для админов
+    if m.from_user.id not in ADMIN_IDS:
+        await m.answer("❌ Bu buyruq faqat adminlar uchun")
+        return
     # /report [YYYY-MM-DD]
     parts = m.text.split()
     d = None
