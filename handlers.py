@@ -6,6 +6,16 @@ from api import get_daily_report, health
 
 router = Router()
 
+@router.message(Command("start"))
+async def start(m: types.Message):
+    welcome_text = (
+        "Assalomu aleykum!\n\n"
+        "Men GeoAgro Reports botman. "
+        "Kunlik va haftalik hisobotlarni yuboraman.\n\n"
+        "Yordam uchun: @rokki_khazratov"
+    )
+    await m.answer(welcome_text)
+
 @router.message(Command("ping"))
 async def ping(m: types.Message):
     data = await health()
