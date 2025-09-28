@@ -11,10 +11,10 @@ router = Router()
 async def start(m: types.Message):
     text = (
         "👋 Assalomu alaykum\\!\n\n"
-        "Men — *GeoAgro Reports* botman\\.\n"
+        "Men — *GeoAgro Records* botman\\.\n"
         "Kunlik va haftalik hisobotlarni avtomatik tarzda yuboraman\\.\n\n"
         "🔒 *Diqqat:* Ushbu bot faqat ichki foydalanish uchun mo\\'ljallangan\\.\n"
-        "Agar siz Qishloq xo\\'jaligi vazirligi tizimida ishlasangiz va kirish huquqini olishni xohlasangiz — "
+        "Agar siz Qishloq xo\\'jaligi vazirligi huzuridagi Agrosanoatni rivojlantirish agentligi tizimida ishlasangiz va kirish huquqini olishni xohlasangiz — "
         "menga yozing: @rokki\\_khazratov"
     )
     await m.answer(text, parse_mode="MarkdownV2", disable_web_page_preview=True)
