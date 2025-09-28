@@ -19,20 +19,20 @@ ADMIN_IDS=123456789,987654321  # Ваши Telegram ID через запятую
 ### Автоматическое обновление:
 ```bash
 # На сервере
-cd /opt/GeoAgro-reports
+cd /root/projects/geoagro/record-bot
 sudo ./deploy.sh
 ```
 
 ### Ручное обновление:
 ```bash
 # 1. Создать бэкап
-sudo cp -r /opt/GeoAgro-reports /opt/GeoAgro-reports.backup.$(date +%Y%m%d_%H%M%S)
+sudo cp -r /root/projects/geoagro/record-bot /root/projects/geoagro/record-bot.backup.$(date +%Y%m%d_%H%M%S)
 
 # 2. Остановить бота
 sudo systemctl stop geoagro-bot
 
 # 3. Сохранить .env
-cd /opt/GeoAgro-reports
+cd /root/projects/geoagro/record-bot
 cp .env .env.backup
 
 # 4. Получить обновления
@@ -43,7 +43,7 @@ git reset --hard origin/main
 cp .env.backup .env
 
 # 6. Обновить зависимости
-sudo -u bot .venv/bin/pip install -r requirements.txt
+.venv/bin/pip install -r requirements.txt
 
 # 7. Запустить бота
 sudo systemctl start geoagro-bot
@@ -74,8 +74,8 @@ sudo journalctl -u geoagro-bot -f
 sudo systemctl stop geoagro-bot
 
 # Восстановить из бэкапа
-sudo rm -rf /opt/GeoAgro-reports
-sudo mv /opt/GeoAgro-reports.backup.* /opt/GeoAgro-reports
+sudo rm -rf /root/projects/geoagro/record-bot
+sudo mv /root/projects/geoagro/record-bot.backup.* /root/projects/geoagro/record-bot
 
 # Запустить
 sudo systemctl start geoagro-bot

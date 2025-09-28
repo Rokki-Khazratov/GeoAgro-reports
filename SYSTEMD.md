@@ -26,30 +26,35 @@ WantedBy=multi-user.target
 ## Установка
 
 1. Создайте пользователя для бота:
+
 ```bash
 sudo useradd -r -s /bin/false bot
 ```
 
-2. Скопируйте файлы в `/opt/GeoAgro-reports`:
+2. Скопируйте файлы в `/root/projects/geoagro/record-bot`:
+
 ```bash
-sudo cp -r /path/to/GeoAgro-reports /opt/
-sudo chown -R bot:bot /opt/GeoAgro-reports
+sudo cp -r /path/to/GeoAgro-reports /root/projects/geoagro/record-bot
+sudo chown -R root:root /root/projects/geoagro/record-bot
 ```
 
 3. Установите зависимости:
+
 ```bash
-cd /opt/GeoAgro-reports
-sudo -u bot python3 -m venv .venv
-sudo -u bot .venv/bin/pip install -r requirements.txt
+cd /root/projects/geoagro/record-bot
+python3 -m venv .venv
+.venv/bin/pip install -r requirements.txt
 ```
 
 4. Настройте переменные окружения:
+
 ```bash
-sudo -u bot cp env.example .env
-sudo -u bot nano .env  # Заполните переменные
+cp env.example .env
+nano .env  # Заполните переменные
 ```
 
 5. Активируйте сервис:
+
 ```bash
 sudo systemctl daemon-reload
 sudo systemctl enable geoagro-bot
@@ -78,6 +83,7 @@ sudo journalctl -u geoagro-bot -f
 ## Логирование
 
 Логи сохраняются в systemd journal:
+
 ```bash
 # Последние логи
 sudo journalctl -u geoagro-bot -n 50
