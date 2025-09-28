@@ -26,7 +26,7 @@ async def ping(m: types.Message):
         await m.answer("❌ Bu buyruq faqat adminlar uchun")
         return
     data = await health()
-    await m.answer(f"pong: {data.get('status','?')} {data.get('tz','')}", disable_web_page_preview=True)
+    await m.answer(f"ping: {data.get('status','?')} {data.get('tz','')}", disable_web_page_preview=True)
 
 @router.message(Command("report"))
 async def manual_report(m: types.Message):
