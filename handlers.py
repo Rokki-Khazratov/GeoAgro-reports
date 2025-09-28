@@ -19,7 +19,7 @@ async def start(m: types.Message):
 @router.message(Command("ping"))
 async def ping(m: types.Message):
     data = await health()
-    await m.answer(f"pong: {data.get('status','?')} {data.get('tz','')}", disable_web_page_preview=True)
+    await m.answer(f"ping: {data.get('status','?')} {data.get('tz','')}", disable_web_page_preview=True)
 
 @router.message(Command("report"))
 async def manual_report(m: types.Message):
@@ -33,11 +33,9 @@ async def manual_report(m: types.Message):
         except ValueError:
             await m.answer("Format: /report YYYY-MM-DD")
             return
-    await m.answer(UZ_LOADING)
     try:
         payload = await get_daily_report(d)
         msg = format_daily(payload, suffix=(d or "manual"))
         await m.answer(msg, parse_mode="HTML")
-        await m.answer(UZ_OK)
     except Exception as e:
         await m.answer(f"{UZ_ERR}\n{e!s}")
