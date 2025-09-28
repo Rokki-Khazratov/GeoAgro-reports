@@ -15,6 +15,7 @@ dist/
 *.pem
 *.key
 TELEGRAM_BOT_API.md
+test_bot.py
 
 # editors
 .vscode/

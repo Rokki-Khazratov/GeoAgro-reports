@@ -3,17 +3,20 @@
 ## Быстрый старт
 
 ### 1. Установка зависимостей
+
 ```bash
 pip install -r requirements.txt
 ```
 
 ### 2. Настройка переменных окружения
+
 ```bash
 cp env.example .env
 # Отредактируйте .env файл
 ```
 
 ### 3. Запуск бота
+
 ```bash
 python app.py
 ```
@@ -67,6 +70,7 @@ TZ=Asia/Tashkent
 ## Логи
 
 Бот выводит логи в консоль:
+
 ```
 INFO:aiogram:Bot started
 INFO:aiogram:Bot is running

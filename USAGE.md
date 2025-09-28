@@ -12,7 +12,7 @@
 
 **Ответ:**
 ```
-pong: ok Asia/Tashkent
+ping: ok Asia/Tashkent
 ```
 
 ### `/report [дата]`
