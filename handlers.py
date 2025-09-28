@@ -10,10 +10,10 @@ router = Router()
 @router.message(Command("start"))
 async def start(m: types.Message):
     text = (
-        "👋 Assalomu alaykum!\n\n"
-        "Men — *GeoAgro Reports* botman.\n"
-        "Kunlik va haftalik hisobotlarni avtomatik tarzda yuboraman.\n\n"
-        "🔒 *Diqqat:* Ushbu bot faqat ichki foydalanish uchun mo\\'ljallangan.\n"
+        "👋 Assalomu alaykum\\!\n\n"
+        "Men — *GeoAgro Reports* botman\\.\n"
+        "Kunlik va haftalik hisobotlarni avtomatik tarzda yuboraman\\.\n\n"
+        "🔒 *Diqqat:* Ushbu bot faqat ichki foydalanish uchun mo\\'ljallangan\\.\n"
         "Agar siz Qishloq xo\\'jaligi vazirligi tizimida ishlasangiz va kirish huquqini olishni xohlasangiz — "
         "menga yozing: @rokki\\_khazratov"
     )
