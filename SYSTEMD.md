@@ -11,11 +11,11 @@ After=network.target
 
 [Service]
 Type=simple
-User=bot
-Group=bot
-WorkingDirectory=/opt/GeoAgro-reports
+User=root
+Group=root
+WorkingDirectory=/root/projects/geoagro/record-bot
 Environment="PYTHONUNBUFFERED=1"
-ExecStart=/opt/GeoAgro-reports/.venv/bin/python /opt/GeoAgro-reports/app.py
+ExecStart=/root/projects/geoagro/record-bot/.venv/bin/python /root/projects/geoagro/record-bot/app.py
 Restart=always
 RestartSec=10
 

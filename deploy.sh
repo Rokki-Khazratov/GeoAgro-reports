@@ -8,14 +8,14 @@ echo "🔄 Начинаем обновление бота..."
 
 # 1. Создаем бэкап
 echo "📦 Создаем бэкап..."
-cp -r /opt/GeoAgro-reports /opt/GeoAgro-reports.backup.$(date +%Y%m%d_%H%M%S)
+cp -r /root/projects/geoagro/record-bot /root/projects/geoagro/record-bot.backup.$(date +%Y%m%d_%H%M%S)
 
 # 2. Останавливаем бота
 echo "⏹️ Останавливаем бота..."
 sudo systemctl stop geoagro-bot || true
 
 # 3. Переходим в директорию
-cd /opt/GeoAgro-reports
+cd /root/projects/geoagro/record-bot
 
 # 4. Сохраняем .env файл
 echo "💾 Сохраняем .env файл..."
